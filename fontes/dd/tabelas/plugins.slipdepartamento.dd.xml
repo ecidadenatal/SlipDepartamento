@@ -1,0 +1,57 @@
+<?xml version="1.0" standalone="yes" ?>
+<table name="plugins.slipdepartamento" description="Guarda o departamento que realizou o slip" prefix="" label="Departamento do Slip" type="0">
+  <fields>
+    <field name="sequencial"
+           conteudo="int4"
+           description="Sequencial"
+           inivalue="0"
+           label="Sequencial"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Sequencial"
+           reference=""
+           ispk="t"
+           hassequence="t">
+      <sequence name="plugins.slipdepartamento_sequencial_seq"></sequence>
+    </field>
+    <field name="slip"
+           conteudo="int4"
+           description="Slip"
+           inivalue="0"
+           label="Slip"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Slip"
+           reference=""
+           ispk="f"
+           hassequence="f">
+    </field>
+    <field name="departamento"
+           conteudo="int4"
+           description="Departamento"
+           inivalue="0"
+           label="Departamento"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Departamento"
+           reference=""
+           ispk="f"
+           hassequence="f">
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="sequencial"></fieldpk>
+  </primarykey>
+</table>

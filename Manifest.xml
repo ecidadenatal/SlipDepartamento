@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <plugin name="SlipDepartamento" label="Departamento do Slip " plugin-version="1.0" ecidade-version="2.3.39" id-modulo="39">
+    <id id="SlipDepartamento"> </id>
+    <files>
+      <file name="cai4_manutencaoslipdepartamento001.php" path="/cai4_manutencaoslipdepartamento001.php" />
+      <!-- classe -->
+      <file name="db_slipdepartamento_classe.php"         path="/classes/db_slipdepartamento_classe.php" />
+      <!-- outro -->
+      <file name="plugins.slipdepartamento.dd.xml"        path="/dd/tabelas/plugins.slipdepartamento.dd.xml" />
+      <file name="SlipDepartamento.xml"                   path="/modification/xml/SlipDepartamento.xml" />
+    </files>
+    <estrutura install="/instalacao.sql" uninstall="/desinstalacao.sql" >
+    </estrutura>
+  </plugin>
+</manifest>
