@@ -35,13 +35,5 @@
         ]]>
       </add>
     </operation>
-    <operation>
-      <search><![CDATA[/* [Inicio extensao SlipDepartamento - SQL 1] */]]></search>
-      <add position="after">
-        <![CDATA[
-        $sObservacao  .= "";
-        ]]>
-      </add>
-    </operation>
   </file>  
 </modification>
