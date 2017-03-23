@@ -5,35 +5,30 @@
   <ecidade-version>2.3.39</ecidade-version>
   <file path='model/slip.model.php'>
     <operation>
-      <search><![CDATA[/* [Inicio extensao SlipDepartamento] */]]></search>
-      <add position="after">
-        <![CDATA[
+      <search regex="true"><![CDATA[(\$clslip->incluir\(.*\)\s*;)]]></search>
+      <add>
+        <![CDATA[$1
+        
+        /* [Inicio extensao SlipDepartamento] */
         $oSlipDepartamento = db_utils::getDao("slipdepartamento");
         $oSlipDepartamento->slip         = $clslip->k17_codigo;
         $oSlipDepartamento->departamento = db_getsession("DB_coddepto");
         $oSlipDepartamento->incluir();
+        /* [Fim extensao SlipDepartamento] */
         ]]>
       </add>
     </operation>
   </file>
   <file path='cai4_arquivoBanco004.RPC.php'>
     <operation>
-      <search><![CDATA[/* [Inicio extensao SlipDepartamento] */]]></search>
-      <add position="after">
+      <search regex="true"><![CDATA[(\$oJson\s*=\s*new\s*services_json\(\)\s*;)]]></search>
+      <add>
         <![CDATA[
         require_once(Modification::getFile("model/caixa/MovimentoArquivoTransmissao.model.php"));
+        
+        $1
         ]]>
       </add>
     </operation>
   </file>
-  <file path='emp4_gerarslipRPC.php'>
-    <operation>
-      <search><![CDATA[/* [Inicio extensao SlipDepartamento] */]]></search>
-      <add position="after">
-        <![CDATA[
-        $sObservacao  .= "\nOP: {$oArrecadacao->iOrdem}";
-        ]]>
-      </add>
-    </operation>
-  </file>  
 </modification>
