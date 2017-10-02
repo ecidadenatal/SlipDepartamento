@@ -1,12 +1,12 @@
 <?PHP
-require_once("libs/db_stdlib.php");
-require_once("libs/db_conecta_plugin.php");
-require_once("libs/db_sessoes.php");
-require_once("libs/db_usuariosonline.php");
-require_once("dbforms/db_funcoes.php");
-require_once("libs/db_app.utils.php");
-require_once("libs/db_utils.php");
-require_once("classes/db_slipdepartamento_classe.php");
+require_once(modification("libs/db_stdlib.php"));
+require_once(modification("libs/db_conecta_plugin.php"));
+require_once(modification("libs/db_sessoes.php"));
+require_once(modification("libs/db_usuariosonline.php"));
+require_once(modification("dbforms/db_funcoes.php"));
+require_once(modification("libs/db_app.utils.php"));
+require_once(modification("libs/db_utils.php"));
+require_once(modification("classes/db_slipdepartamento_classe.php"));
 db_postmemory($HTTP_POST_VARS);
 
 db_app::load("scripts.js");
@@ -149,7 +149,7 @@ if(isset($alterar)){
 <script>
 //função de pesquisa para o Slip
 function js_pesquisaSlip() {
-  js_OpenJanelaIframe('top.corpo',
+  js_OpenJanelaIframe('CurrentWindow.corpo',
               'db_iframe_slip',
               'func_slipAutenticacao.php?lAltera=1&funcao_js=parent.js_preenchePesquisa|k17_codigo',
               'Pesquisar Slip',
@@ -170,7 +170,7 @@ function js_pesquisaDepartamento(mostra) {
   
   if (mostra==true) {
     var sUrl = 'func_departamento.php?lAltera=1&funcao_js=parent.js_mostraDepartamento1|coddepto|descrdepto';
-      js_OpenJanelaIframe('top.corpo',
+      js_OpenJanelaIframe('CurrentWindow.corpo',
                           'db_iframe_departamento',
                           sUrl,
                           'Pesquisar Departamento',
@@ -179,7 +179,7 @@ function js_pesquisaDepartamento(mostra) {
 
     if ($('coddepto').value != '') {
 
-      js_OpenJanelaIframe('top.corpo',
+      js_OpenJanelaIframe('CurrentWindow.corpo',
                           'db_iframe_departamento',
                           'func_departamento.php?lAltera=1&pesquisa_chave='+$('coddepto').value+
                           '&funcao_js=parent.js_mostraDepartamento',
